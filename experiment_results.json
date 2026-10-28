@@ -1,0 +1,131 @@
+{
+  "random_seed": 42,
+  "split": {
+    "test_size": 0.2,
+    "stratified": true,
+    "n_train": 800,
+    "n_test": 200
+  },
+  "selection_criterion": "mean ROC-AUC, 5x2 repeated stratified CV на train",
+  "selected_by_cv": "Voting soft (LR+RF+GB)",
+  "final_model": {
+    "model_name": "Soft Voting: LogisticRegression + RandomForest + GradientBoosting",
+    "roc_auc": 0.8486904761904762,
+    "accuracy": 0.77,
+    "precision": 0.7974683544303798,
+    "recall": 0.9,
+    "f1": 0.8456375838926175
+  },
+  "experiments": [
+    {
+      "model": "LogisticRegression (baseline)",
+      "cv_roc_auc_mean": 0.7696428571428571,
+      "cv_roc_auc_std": 0.03839613744522837,
+      "test_roc_auc": 0.839047619047619,
+      "test_accuracy": 0.8,
+      "test_precision": 0.8378378378378378,
+      "test_recall": 0.8857142857142857,
+      "test_f1": 0.8611111111111112,
+      "seconds": 0.2
+    },
+    {
+      "model": "RandomForest",
+      "cv_roc_auc_mean": 0.784951636904762,
+      "cv_roc_auc_std": 0.025820094004434874,
+      "test_roc_auc": 0.8241666666666666,
+      "test_accuracy": 0.77,
+      "test_precision": 0.7764705882352941,
+      "test_recall": 0.9428571428571428,
+      "test_f1": 0.8516129032258064,
+      "seconds": 4.7
+    },
+    {
+      "model": "ExtraTrees",
+      "cv_roc_auc_mean": 0.7566592261904762,
+      "cv_roc_auc_std": 0.02767427081924622,
+      "test_roc_auc": 0.8083928571428571,
+      "test_accuracy": 0.755,
+      "test_precision": 0.7935483870967742,
+      "test_recall": 0.8785714285714286,
+      "test_f1": 0.8338983050847457,
+      "seconds": 6.3
+    },
+    {
+      "model": "AdaBoost",
+      "cv_roc_auc_mean": 0.7596354166666667,
+      "cv_roc_auc_std": 0.02906703707910083,
+      "test_roc_auc": 0.836547619047619,
+      "test_accuracy": 0.75,
+      "test_precision": 0.7710843373493976,
+      "test_recall": 0.9142857142857143,
+      "test_f1": 0.8366013071895425,
+      "seconds": 4.1
+    },
+    {
+      "model": "GradientBoosting",
+      "cv_roc_auc_mean": 0.779482886904762,
+      "cv_roc_auc_std": 0.029074112947005328,
+      "test_roc_auc": 0.8422619047619048,
+      "test_accuracy": 0.78,
+      "test_precision": 0.8116883116883117,
+      "test_recall": 0.8928571428571429,
+      "test_f1": 0.8503401360544217,
+      "seconds": 3.3
+    },
+    {
+      "model": "HistGradientBoosting",
+      "cv_roc_auc_mean": 0.7677083333333333,
+      "cv_roc_auc_std": 0.025033332592045657,
+      "test_roc_auc": 0.8375,
+      "test_accuracy": 0.755,
+      "test_precision": 0.7791411042944786,
+      "test_recall": 0.9071428571428571,
+      "test_f1": 0.8382838283828383,
+      "seconds": 1.9
+    },
+    {
+      "model": "MLP (32,) alpha=1.0",
+      "cv_roc_auc_mean": 0.7641183035714285,
+      "cv_roc_auc_std": 0.03407029815826606,
+      "test_roc_auc": 0.805595238095238,
+      "test_accuracy": 0.785,
+      "test_precision": 0.8211920529801324,
+      "test_recall": 0.8857142857142857,
+      "test_f1": 0.852233676975945,
+      "seconds": 8.2
+    },
+    {
+      "model": "Stacking (LR+RF+GB -> LR)",
+      "cv_roc_auc_mean": 0.7863839285714286,
+      "cv_roc_auc_std": 0.033625499156228575,
+      "test_roc_auc": 0.8473809523809525,
+      "test_accuracy": 0.78,
+      "test_precision": 0.8076923076923077,
+      "test_recall": 0.9,
+      "test_f1": 0.8513513513513513,
+      "seconds": 40.6
+    },
+    {
+      "model": "Voting soft (LR+RF+GB)",
+      "cv_roc_auc_mean": 0.787295386904762,
+      "cv_roc_auc_std": 0.03283415733448661,
+      "test_roc_auc": 0.8486904761904762,
+      "test_accuracy": 0.77,
+      "test_precision": 0.7974683544303798,
+      "test_recall": 0.9,
+      "test_f1": 0.8456375838926175,
+      "seconds": 7.7
+    },
+    {
+      "model": "Voting soft, без доп. признаков (абляция)",
+      "cv_roc_auc_mean": 0.7768229166666667,
+      "cv_roc_auc_std": 0.035179941311908484,
+      "test_roc_auc": 0.8447619047619048,
+      "test_accuracy": 0.795,
+      "test_precision": 0.8113207547169812,
+      "test_recall": 0.9214285714285714,
+      "test_f1": 0.862876254180602,
+      "seconds": 7.2
+    }
+  ]
+}
